@@ -1,242 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PeteZah Link Hub</title>
-    <style>
-        /* Global styles */
-        body {
-            background-color: #0A1D37; /* Dark background */
-            color: #f0f0f0; /* Text color */
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            overflow: hidden;
-            position: relative;
-            transition: background-color 0.5s ease, color 0.5s ease;
-        }
+<html lang="en"><head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Scramjet</title>
+		<link rel="icon" href="/storage/images/logo-png-removebg-preview.png" type="image/png">
+		<link rel="prefetch" href="scram/scramjet.worker.js">
+		<link rel="prefetch" href="scram/scramjet.shared.js">
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family=Inter+Tight:ital,wght@0,100..900;1,100..900&amp;family=Inter:wght@100..900&amp;display=swap&amp;" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+		<link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+		<link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&amp;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
+		<style>
+			body,
+			html,
+			#app {
+				font-family:
+					"Inter",
+					system-ui,
+					-apple-system,
+					BlinkMacSystemFont,
+					sans-serif;
+				width: 100vw;
+				height: 100vh;
+				margin: 0;
+				padding: 0;
+				background-color: #050505;
+				overflow: hidden;
+			}
 
-        /* Light mode */
-        body.light-mode {
-            background-color: #f5f5f5;
-            color: #1c1c1c;
-        }
+			@keyframes fade {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+		</style>
+	<style>.dlc6zn {
+	display: flex;
 
-        h1 {
-            font-size: 3em;
-            color: #00BFFF; /* Bright cyan */
-            margin-bottom: 30px;
-            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-        }
+}</style><style>.dlrlqq {
+	flex-direction: column;
 
-        /* Button and Dropdown Styles */
-        select, button {
-            background: linear-gradient(45deg, #00BFFF, #1E90FF); /* Gradient color for buttons */
-            color: #fff;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            border-radius: 30px;
-            margin-top: 15px;
-            outline: none;
-            width: 250px;
-            cursor: pointer;
-            transition: all 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        select:hover, button:hover {
-            background: linear-gradient(45deg, #1E90FF, #00BFFF);
-            transform: translateY(-5px); /* Lift effect */
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Link Container */
-        .link-container {
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 80%;
-            max-width: 600px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .link-container a {
-            background: linear-gradient(45deg, #00BFFF, #1E90FF); /* Gradient background */
-            color: #fff;
-            text-decoration: none;
-            padding: 20px;
-            margin: 10px 0;
-            width: 100%;
-            border-radius: 15px;
-            text-align: center;
-            font-size: 1.2em;
-            box-sizing: border-box;
-            transition: all 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .link-container a:hover {
-            background: linear-gradient(45deg, #1E90FF, #00BFFF);
-            transform: translateY(-5px); /* Slight lift effect */
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        body.light-mode .link-container a {
-            background: linear-gradient(45deg, #00BFFF, #87CEFA); /* Light cyan gradient */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        body.light-mode .link-container a:hover {
-            background: linear-gradient(45deg, #87CEFA, #00BFFF);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        /* God Rays Effect */
-        /* God Rays Effect */
-.god-rays {
-    position: fixed;
-    top: 0;
-    left: 0;
+}</style><style>.Config-59aj {
+    transition: opacity 0.4s ease;
+} @scope (.Config-59aj) to (:not(.Config-59aj).dlcomponent *) { .buttons { gap: 0.5em; }.buttons button { border: 1px solid rgb(76, 139, 245); background-color: rgb(49, 49, 49); border-radius: 0.75em; color: rgb(255, 255, 255); padding: 0.45em; }.input_row input { background-color: rgb(18, 18, 18); border: 2px solid rgb(49, 49, 49); border-radius: 0.75em; color: rgb(255, 255, 255); outline: none; padding: 0.45em; }.input_row { margin-bottom: 0.5em; margin-top: 0.5em; }.input_row input { flex-grow: 1; }.centered { justify-content: center; align-items: center; } } .Config-59aj:modal[open] { animation: 0.4s ease 0s 1 normal none running fade; }.Config-59aj:modal::backdrop { backdrop-filter: blur(3px); }</style><style>.BrowserApp-lknw {
     width: 100%;
-    height: 550px;
-    --stripes: repeating-linear-gradient(100deg, rgba(20, 40, 60, 0.8) 0%, rgba(20, 40, 60, 0.8) 7%, transparent 10%, transparent 12%, rgba(20, 40, 60, 0.8) 16%);
-    --rays: repeating-linear-gradient(100deg, rgba(30, 50, 90, 0.9) 10%, rgba(20, 40, 80, 0.9) 15%, rgba(30, 50, 90, 0.9) 20%, rgba(20, 40, 80, 0.9) 25%, rgba(30, 50, 90, 0.9) 30%);
-    background-image: var(--stripes), var(--rays);
-    background-size: 300%, 200%;
-    background-position: 50% 50%, 50% 50%;
-    animation: fadeIn 2s ease;
-    mask-image: radial-gradient(ellipse at 100% 0%, rgba(255, 255, 255, 0) 40%, transparent 70%);
-    -webkit-mask-image: radial-gradient(ellipse at 100% 0%, white 40%, transparent 70%);
-    pointer-events: none;
-    z-index: -1;
-}
+    height: 100%;
+    color: #e0def4;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    padding-top: 0;
+    box-sizing: border-box;
 
-.god-rays::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: var(--stripes), var(--rays);
-    background-size: 200%, 100%;
-    background-attachment: fixed;
-    mix-blend-mode: difference;
-    /* Remove animation that moves rays */
-    animation: none; /* No animation here */
-}
+} @scope (.BrowserApp-lknw) to (:not(.BrowserApp-lknw).dlcomponent *) { a { color: rgb(224, 222, 244); }input, button { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif; }.version { }h1 { font-family: "Inter Tight", Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif; margin-bottom: 0px; }iframe { background-color: rgb(255, 255, 255); border: none; border-radius: 0.3em; flex: 1 1 0%; width: 100%; }input.bar { font-family: Inter; padding: 0.1em 0.1em 0.1em 0.3em; outline: none; color: rgb(255, 255, 255); height: 1.5em; border-radius: 0.3em; flex: 1 1 0%; background-color: rgb(18, 18, 18); border: 1px solid rgb(49, 49, 49); }.input_row > label { font-size: 0.7rem; color: gray; }p { margin: 0.2em 0px 0px; }.nav { padding-top: 0.3em; padding-bottom: 0.3em; gap: 0.3em; }spacer { margin-left: 10em; }.nav button { color: rgb(255, 255, 255); outline: none; border-radius: 0.3em; background-color: rgb(18, 18, 18); border: 1px solid rgb(49, 49, 49); } } </style></head>
 
-/* Keyframe for fadeIn */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
+	<body>
+		<script src="https://cdn.jsdelivr.net/npm/dreamland"></script>
+		<script src="baremux/index.js" defer=""></script>
+		<script src="scram/scramjet.controller.js"></script>
+		<script src="config.js"></script>
+		<script src="ui.js" defer=""></script>
+	
 
+<dialog class="cfg Config-59aj dlcomponent" style="background-color: #121212; color: white; border-radius: 8px;" data-component="Config">
+        <div style="align-self: end">
+          <div class="dlc6zn buttons">
+            <button>use bare server 3</button>
+            <button>use libcurl.js</button>
+              <button>use epoxy</button>
+          </div>
+        </div>
+        <div class="dlc6zn dlrlqq input_row">
+          <label for="wisp_url_input">Wisp URL:</label>
+          <input id="wisp_url_input" spellcheck="false">
+        </div>
+        <div class="dlc6zn dlrlqq input_row">
+          <label for="bare_url_input">Bare URL:</label>
+          <input id="bare_url_input" spellcheck="false">
+        </div>
+            <div class="dlc6zn buttons centered">
+              <button>close</button>
+            </div>
 
-        /* Light/Dark Mode Toggle */
-        .toggle-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            background-color: #ff1493;
-            color: #fff;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-        }
+      </dialog><div class="BrowserApp-lknw dlcomponent" data-component="BrowserApp">
+      <div class="dlc6zn nav">
 
-        .toggle-btn:hover {
-            background-color: #ff69b4;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-    </style>
-</head>
-<body>
+        <button>config</button>
+        <button>&lt;-</button>
+        <button>-&gt;</button>
+        <button>↻</button>
 
-    <h1>PeteZah Link Hub</h1>
+        <input class="bar">
 
-    <div>
-        <select id="linkCategory">
-            <option value="domains">Domain Links</option>
-            <option value="firebase">Firebase Links</option>
-            <option value="cloudflare">Cloudflare Links</option>
-            <option value="fastly">Fastly Links</option>
-        </select>
-    </div>
+        <button>open</button>
 
-    <button onclick="getRandomLink()">Give Me A Link</button>
-
-    <div class="link-container" id="linkList">
-        <!-- The link will be shown here -->
-    </div>
-
-    <!-- Light/Dark Mode Toggle Button -->
-    <button class="toggle-btn" onclick="toggleMode()">Toggle Light/Dark Mode</button>
-
-    <div class="god-rays"></div>
-
-    <script>
-        const links = {
-            domains: [
-                { name: "Main", url: "https://petezahgames.com" },
-                { name: "Backup 1", url: "https://supergisfire.com" },
-                { name: "Backup 2", url: "https://cudahysdschoolwork.supergisfire.com/" }
-            ],
-            firebase: [
-                { name: "PeteZah Finally Works", url: "https://petezahfinallyworks.web.app" },
-                { name: "PeteZah", url: "https://petezah.web.app" },
-                { name: "Pete-Zah-Games", url: "https://pete-zah-games.web.app/" },
-                { name: "PeteZah is Sexy", url: "https://petezahissexy.web.app" },
-                { name: "I Love PeteZah", url: "https://ilovepetezah.web.app" }
-            ],
-            cloudflare: [
-                { name: "PeteZah", url: "https://petezah.pages.dev" },
-                { name: "Cudahy School Work", url: "https://cudahysdschoolwork.pages.dev" }
-            ],
-            fastly: [
-                { name: "PeteZah Games Fastly", url: "https://petezahgames.global.ssl.fastly.net" },
-                { name: "PeteZah Fastly", url: "https://petezah.global.ssl.fastly.net" },
-                { name: "PeteZah is Cool", url: "https://petezahiscool.global.ssl.fastly.net" }
-            ]
-        };
-
-        function getRandomLink() {
-            const category = document.getElementById('linkCategory').value;
-            const categoryLinks = links[category];
-
-            if (categoryLinks) {
-                const randomLink = categoryLinks[Math.floor(Math.random() * categoryLinks.length)];
-                displayLink(randomLink);
-            }
-        }
-
-        function displayLink(link) {
-            const linkContainer = document.getElementById('linkList');
-            linkContainer.innerHTML = '';  // Clear previous links
-
-            const linkElement = document.createElement('a');
-            linkElement.href = link.url;
-            linkElement.target = "_blank";
-            linkElement.textContent = link.name;
-            linkContainer.appendChild(linkElement);
-        }
-
-        function toggleMode() {
-            document.body.classList.toggle('light-mode');
-        }
-    </script>
-
-</body>
-</html>
+        <p class="version">
+          <b>scramjet</b> 1.0.2-dev <a href="https://github.com/MercuryWorkshop/scramjet/commit/07937b7">07937b7</a>
+        </p>
+      </div>
+      <iframe></iframe>
+    </div></body></html>
